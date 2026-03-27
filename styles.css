@@ -1,0 +1,302 @@
+    :root {
+        --bg: #0b0f19;
+        --card: #121826;
+        --text: #e5e7eb;
+        --accent: #6366f1;
+        --muted: #9ca3af;
+    }
+
+    [data-theme="light"] {
+        --bg: #f9fafb;
+        --card: #ffffff;
+        --text: #111827;
+        --accent: #4f46e5;
+        --muted: #6b7280;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 15px;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    .theme-btn {
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover;
+        opacity: 0.15;
+        transition: transform 0.2s ease;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid var(--accent);
+        margin-bottom: 20px;
+        z-index: 2;
+    }
+
+    .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        background: linear-gradient(90deg, #6366f1, #06b6d4);
+        -webkit-background-clip: text;
+        color: transparent;
+        z-index: 2;
+    }
+
+    header p {
+        color: var(--muted);
+        z-index: 2;
+    }
+
+    section {
+        width: 100%;
+        padding: 100px 0;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+    }
+
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 20px;
+    }
+
+    #about {
+        background: rgba(99, 102, 241, 0.05);
+    }
+
+    #projects {
+        background: rgba(6, 182, 212, 0.05);
+    }
+
+    #experience {
+        background: rgba(99, 102, 241, 0.08);
+    }
+
+    #contact {
+        background: rgba(6, 182, 212, 0.05);
+    }
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    /* CAROUSEL */
+    .carousel {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.5s ease;
+    }
+
+    .card {
+        min-width: 300px;
+        background: var(--card);
+        border-radius: 20px;
+        overflow: hidden;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .card:hover img {
+        transform: scale(1.1);
+        filter: blur(2px);
+    }
+
+    .card::after {
+        content: 'Ver Proyecto';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: opacity 0.3s ease;
+    }
+
+    .card:hover::after {
+        opacity: 1;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card button {
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background: var(--accent);
+        color: white;
+        cursor: pointer;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        cursor: pointer;
+        background: var(--card);
+        padding: 10px;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .arrow.left {
+        left: 0;
+    }
+
+    .arrow.right {
+        right: 0;
+    }
+
+    /* TIMELINE */
+    .timeline {
+        border-left: 2px solid var(--accent);
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+        background: var(--accent);
+        border-radius: 50%;
+    }
+
+    .tags {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tag {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(99, 102, 241, 0.2);
+        font-size: 12px;
+    }
+
+    /* CONTACT */
+    .contact-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+        background: var(--card);
+        border-radius: 15px;
+        width: 120px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .contact-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .contact-item i {
+        font-size: 24px;
+        color: var(--accent);
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        color: var(--muted);
+    }
