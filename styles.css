@@ -27,29 +27,108 @@
         overflow-x: hidden;
     }
 
+    /* NAV LAYOUT */
     nav {
         position: fixed;
         width: 100%;
         top: 0;
         display: flex;
-        justify-content: center;
-        gap: 30px;
-        padding: 15px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
         backdrop-filter: blur(10px);
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.4);
         z-index: 1000;
     }
 
-    nav a {
+    /* LINKS */
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        position: relative;
         color: var(--text);
         text-decoration: none;
+        font-weight: 500;
+        padding: 5px 10px;
+        transition: 0.3s;
+    }
+
+    /* EFECTO NEÓN */
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: var(--accent);
+        box-shadow: 0 0 10px var(--accent);
+        transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    /* LINK ACTIVO */
+    .nav-links a.active {
+        color: var(--accent);
+    }
+
+    .nav-links a.active::after {
+        width: 100%;
+    }
+
+    /* BOTONES DERECHA */
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* BOTÓN IDIOMA */
+    .lang-btn {
+        background: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 5px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
     }
 
     .theme-btn {
-        position: absolute;
-        right: 20px;
         cursor: pointer;
-        font-size: 18px;
+        padding: 5px;
+    }
+
+    .theme-btn:hover {
+        background: var(--accent);
+        border-radius: 70%;
+        box-shadow:
+            0 0 10px var(--accent),
+            0 0 25px var(--accent),
+            0 0 50px var(--accent);
+    }
+
+    .lang-btn:hover {
+        background: var(--accent);
+        color: white;
+        box-shadow: 0 0 10px var(--accent);
+    }
+
+    /* SEPARADOR SUTIL */
+    nav::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        width: 90%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--accent), transparent);
     }
 
     header {
@@ -65,9 +144,9 @@
 
     .hero-bg {
         position: absolute;
-        width: 120%;
-        height: 120%;
-        background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover;
+        width: 90%;
+        height: 90%;
+        background: url('./media/background/bg.jpg') center/cover;
         opacity: 0.15;
         transition: transform 0.2s ease;
     }
@@ -85,7 +164,6 @@
     .profile-pic img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
 
     header h1 {
@@ -173,8 +251,7 @@
         filter: blur(2px);
     }
 
-    .card::after {
-        content: 'Ver Proyecto';
+    .overlay {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -184,6 +261,13 @@
         padding: 10px 20px;
         border-radius: 10px;
         transition: opacity 0.3s ease;
+        color: white;
+        text-decoration: none;
+        z-index: 5;
+    }
+
+    .card:hover .overlay {
+        opacity: 1;
     }
 
     .card:hover::after {
@@ -260,6 +344,16 @@
         font-size: 12px;
     }
 
+    .desc-project{
+        font-style: italic;
+        text-align: justify;
+    }
+
+    .title-project{
+        font-size: larger;
+        font-weight: 900;
+    }
+
     /* CONTACT */
     .contact-header {
         text-align: center;
@@ -274,6 +368,8 @@
     }
 
     .contact-item {
+        text-decoration: none;
+        color: var(--text);
         display: flex;
         flex-direction: column;
         align-items: center;

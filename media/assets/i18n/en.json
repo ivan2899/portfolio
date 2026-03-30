@@ -1,0 +1,18 @@
+{
+    "home": "Home",
+    "about": "About me",
+    "projects": "Some of my projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "about_desc": "Programming Technician graduated from UTN, with a strong foundation in both backend and frontend development. Experienced with technologies such as C#, SQL, and web development (CSS, TS, JS, HTML), focused on building functional and scalable applications. Currently seeking my first opportunity in the IT industry to contribute to real-world projects, continue learning, and grow professionally in a dynamic, results-driven environment..",
+    "title-experience-1": "Game Room",
+    "desc-experience-1": "Web application with a database and real-time chat, allowing users to play classic games such as Hangman, Higher or Lower, Trivia, and Blackjack. Includes a user authentication system, as registration is required to access games and store scores.",
+    "title-experience-2": "Online Clinic",
+    "desc-experience-2": "Final project application featuring multiple user roles (patient, doctor, and administrator). Patients can request appointments, which are then received by doctors who can accept or reschedule them. Includes an authentication system integrated with Firebase to validate users, requiring registration for access.",
+    "title-experience-3": "Security Tech",
+    "desc-experience-3": "Informational project explaining common security vulnerabilities and hacking techniques, along with prevention methods. Includes a password strength checker that evaluates how secure a given password is.",
+    "title-experience-4": "Coffee House",
+    "desc-experience-4": "Group project simulating an online coffee store, featuring a shopping cart, a basic login system, and contact/social media integration.",
+    "title-experience-5": "Inclusion",
+    "desc-experience-5": "Frontend bootcamp group project focused on improving accessibility by developing a website that facilitates access to information for people with disabilities."
+}

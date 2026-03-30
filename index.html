@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Ivan</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -13,20 +14,29 @@
 
 <body>
 
+
     <nav>
-        <a href="#home">Inicio</a>
-        <a href="#about">Sobre mí</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#experience">Experiencia</a>
-        <a href="#contact">Contacto</a>
-        <span class="theme-btn" onclick="toggleTheme()" id="themeIcon">🌙</span>
+
+        <div class="nav-links">
+            <a href="#home" data-i18n="home">Inicio</a>
+            <a href="#about" data-i18n="about">Sobre mí</a>
+            <a href="#projects" data-i18n="projects">Proyectos</a>
+            <a href="#experience" data-i18n="experience">Experiencia</a>
+            <a href="#contact" data-i18n="contact">Contacto</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
+            <span class="theme-btn" onclick="toggleTheme()" id="themeIcon">🌙</span>
+        </div>
+
     </nav>
 
     <header id="home">
         <div class="hero-bg" id="heroBg"></div>
 
         <div class="profile-pic">
-            <img src="https://via.placeholder.com/150" />
+            <img id="profileImg" src="./media/me/me.png" />
         </div>
         <h1>Iván Córdoba</h1>
         <p id="dynamicText"></p>
@@ -34,15 +44,18 @@
 
     <section id="about">
         <div class="container">
-            <h2>Sobre mí</h2>
-            <p>Soy desarrollador enfocado en crear aplicaciones modernas, con buen rendimiento y experiencias
-                profesionales.</p>
+            <h2 data-i18n="about">Sobre mí</h2>
+            <p data-i18n="about_desc">Técnico en Programación egresado de la UTN, con sólida formación en desarrollo
+                backend y frontend. Manejo tecnologías como C#, SQL y desarrollo web, con foco en la construcción de
+                aplicaciones funcionales y escalables.
+                Busco mi primera oportunidad en el sector IT para aportar valor en proyectos reales, seguir aprendiendo
+                y crecer profesionalmente en un entorno dinámico orientado a resultados.</p>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
-            <h2>Proyectos</h2>
+            <h2 data-i18n="projects">Algunos de mis proyectos</h2>
 
             <div class="carousel">
                 <div class="arrow left" onclick="move(-1)">◀</div>
@@ -52,17 +65,64 @@
         </div>
     </section>
 
+
     <section id="experience">
         <div class="container">
-            <h2>Experiencia</h2>
+            <h2 data-i18n="experience">Experiencia</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>App Ionic</h3>
-                    <p>Apps con Firebase</p>
+                    <h3 class="title-project" data-i18n="title-experience-1">Sala de juegos</h3>
+                    <p class="desc-project" data-i18n="desc-experience-1">App con BBDD y chat en tiempo real en la que se ofrece la posibilidad al usuario de ingresar a jugar juegos famosos como "Ahorcado", "Mayor menor", "Preguntados" y "Blackjack", en la web tambien se encuentra un sistema de logueo de usuario dado que para empezar cualquier tipo de juego se necesita estar registrados dado que se guardan puntuaciones</p>
                     <div class="tags">
-                        <span class="tag">Ionic</span>
+                        <span class="tag">Html</span>
+                        <span class="tag">Scss</span>
+                        <span class="tag">TS</span>
                         <span class="tag">Angular</span>
                         <span class="tag">Firebase</span>
+                        <span class="tag">Supabase</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="title-project" data-i18n="title-experience-2">Clinica online</h3>
+                    <p class="desc-project" data-i18n="desc-experience-2">Apps realizada como proyecto final en la que hay diferentes tipos de usuarios como paciente, medico y administrador, en la que el paciente puede realizar la solicitud de un turno y le llega esta informacion al medico, y este tiene la opcion de aceptarlo o posponerlo, cuenta con un sistema de login en el que se pega a la bbdd de firebase para verificar los usuarios, en el caso de que no se encuentre ahí no se va a poder ingresar a menos que se registren</p>
+                    <div class="tags">
+                        <span class="tag">Angular</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">TS</span>
+                        <span class="tag">OOP</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="title-project" data-i18n="title-experience-3">Security tech</h3>
+                    <p class="desc-project" data-i18n="desc-experience-3">Proyecto informativo en el que se explican los metodos mas famosos de vulnerabilidades o de hackeo y maneras de prevenirlo, con un verificador de contraseñas incluido en el que indica que tan segura es la clave ingresada</p>
+                    <div class="tags">
+                        <span class="tag">Html</span>
+                        <span class="tag">Css</span>
+                        <span class="tag">JS</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="title-project" data-i18n="title-experience-4">Coffee House</h3>
+                    <p class="desc-project" data-i18n="desc-experience-4">Proyecto grupal realizado simulando una web de venta de café en la que hay un carrito de compras, un sistema de login sencillo, y redes de contacto</p>
+                    <div class="tags">
+                        <span class="tag">Html</span>
+                        <span class="tag">Css</span>
+                        <span class="tag">JS</span>
+                        <span class="tag">GOOGLE API</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="title-project" data-i18n="title-experience-5">Inclusion</h3>
+                    <p class="desc-project" data-i18n="desc-experience-5">Proyecto grupal realizado en un bootcamp de frontend en el que se desarrollo una web para
+                        facilitar el acceso a las personas con discapacidad a la informacion </p>
+                    <div class="tags">
+                        <span class="tag">Html</span>
+                        <span class="tag">Css</span>
+                        <span class="tag">JS</span>
                     </div>
                 </div>
             </div>
@@ -71,16 +131,27 @@
 
     <section id="contact">
         <div class="container">
-            <h2>Contacto</h2>
+            <h2 data-i18n="contact">Contacto</h2>
 
             <div class="contact-header">
                 <h3>ivan.cordoba2002@gmail.com</h3>
             </div>
 
             <div class="contact-grid">
-                <div class="contact-item"><i class="fab fa-github"></i><span>GitHub</span></div>
-                <div class="contact-item"><i class="fab fa-linkedin"></i><span>LinkedIn</span></div>
-                <div class="contact-item"><i class="fas fa-file"></i><span>CV</span></div>
+                <a href="https://github.com/ivan2899" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+
+                <a href="https://linkedin.com/in/ivan-cordoba-90b499253" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+
+                <a href="./Ivan_Cordoba_Frontend_Developer.pdf" target="_blank" class="contact-item">
+                    <i class="fas fa-file"></i>
+                    <span>CV</span>
+                </a>
             </div>
 
             <div class="contact-header">

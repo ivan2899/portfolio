@@ -1,0 +1,18 @@
+{
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Algunos de mis proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "about_desc": "Técnico en Programación egresado de la UTN, con sólida formación en desarrollo backend y frontend. Manejo tecnologías como C#, SQL y desarrollo web (CSS, TS, JS, HTML), con foco en la construcción de aplicaciones funcionales y escalables. Busco mi primera oportunidad en el sector IT para aportar valor en proyectos reales, seguir aprendiendo y crecer profesionalmente en un entorno dinámico orientado a resultados.",
+    "title-experience-1": "Sala de juegos",
+    "desc-experience-1": "App con BBDD y chat en tiempo real en la que se ofrece la posibilidad al usuario de ingresar a jugar juegos famosos como 'Ahorcado', 'Mayor menor', 'Preguntados' y 'Blackjack', en la web tambien se encuentra un sistema de logueo de usuario dado que para empezar cualquier tipo de juego se necesita estar registrados dado que se guardan puntuaciones",
+    "title-experience-2": "Clinica online",
+    "desc-experience-2": "Apps realizada como proyecto final en la que hay diferentes tipos de usuarios como paciente, medico y administrador, en la que el paciente puede realizar la solicitud de un turno y le llega esta informacion al medico, y este tiene la opcion de aceptarlo o posponerlo, cuenta con un sistema de login en el que se pega a la bbdd de firebase para verificar los usuarios, en el caso de que no se encuentre ahí no se va a poder ingresar a menos que se registren",
+    "title-experience-3": "Security tech",
+    "desc-experience-3": "Proyecto informativo en el que se explican los metodos mas famosos de vulnerabilidades o de hackeo y maneras de prevenirlo, con un verificador de contraseñas incluido en el que indica que tan segura es la clave ingresada",
+    "title-experience-4": "Coffee House",
+    "desc-experience-4": "Proyecto grupal realizado simulando una web de venta de café en la que hay un carrito de compras, un sistema de login sencillo, y redes de contacto",
+    "title-experience-5": "Inclusion",
+    "desc-experience-5": "Proyecto grupal realizado en un bootcamp de frontend en el que se desarrollo una web para facilitar el acceso a las personas con discapacidad a la informacion"
+}
