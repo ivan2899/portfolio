@@ -1,6 +1,7 @@
 {
     "dynamicText": [
         "Web Developer",
+        "Sistem Developer",
         "Mobile Developer",
         "Frontend Developer",
         "Full Stack"
@@ -20,5 +21,17 @@
     "title-experience-4": "Coffee House",
     "desc-experience-4": "Group project simulating an online coffee store, featuring a shopping cart, a basic login system, and contact/social media integration.",
     "title-experience-5": "Inclusion",
-    "desc-experience-5": "Frontend bootcamp group project focused on improving accessibility by developing a website that facilitates access to information for people with disabilities."
+    "desc-experience-5": "Frontend bootcamp group project focused on improving accessibility by developing a website that facilitates access to information for people with disabilities.",
+    "viewCode": "View code",
+    "viewProyect": "View proyect",
+    "project1.title": "Game Room",
+    "project1.desc": "Login system with the ability to play some games",
+    "project2.title": "Online Clinic",
+    "project2.desc": "System that allows appointment management",
+    "project3.title": "Security Tech",
+    "project3.desc": "Informational website about cybersecurity",
+    "project4.title": "Inclusion",
+    "project4.desc": "Website to facilitate access to information for people with disabilities",
+    "project5.title": "Coffee House",
+    "project5.desc": "Group project simulating a coffee e-commerce website"
 }

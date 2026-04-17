@@ -1,34 +1,36 @@
 
 const projects = [
   {
-    title: "Sala de juegos",
-    desc: "Sistema login con la posibilidad de jugar algunos juegos",
+    title: "project1.title",
+    desc: "project1.desc",
     img: "./media/proyects/gameProyect.jpeg",
     link: "https://github.com/ivan2899/tp.salaDeJuegos",
     web: "#"
   },
   {
-    title: "Clinica online",
-    desc: "Sistema que permite gestion de turnos",
+    title: "project2.title",
+    desc: "project2.desc",
     img: "./media/proyects/clinicaProyect.png",
     link: "https://github.com/ivan2899/clinicaOnline.git",
     web: "https://clinicaonline-2a62f.web.app/login"
   },
   {
-    title: "Security tech",
-    desc: "Web informativa sobre seguridad informatica",
-    img: "./media/proyects/securityProyect.png", link: "https://github.com/ivan2899/security-tech.git", web: "https://ivan2899.github.io/security-tech/"
+    title: "project3.title",
+    desc: "project3.desc",
+    img: "./media/proyects/securityProyect.png",
+    link: "https://github.com/ivan2899/security-tech.git",
+    web: "https://ivan2899.github.io/security-tech/"
   },
   {
-    title: "Inclusion",
-    desc: "Web para facilitar el acceso a las personas con discapacidad a la informacion.",
+    title: "project4.title",
+    desc: "project4.desc",
     img: "./media/proyects/inclusionProyect.png",
     link: "https://github.com/ivan2899/inclusion.git",
     web: "https://ivan2899.github.io/inclusion/"
   },
   {
-    title: "Coffee House",
-    desc: "Desarrollo grupal simulando una web de venta de café",
+    title: "project5.title",
+    desc: "project5.desc",
     img: "./media/proyects/coffeeProyect.png",
     link: "https://github.com/ivan2899/A332-1-grupo2-coffee-house",
     web: "https://ivan2899.github.io/A332-1-grupo2-coffee-house/"
@@ -45,14 +47,13 @@ projects.forEach(p => {
   <div class="card-inner">
     <div class="img-wrapper">
       <img class="img-content" src="${p.img}">
-      <a href="${p.web}" target="_blank" class="overlay">
-        Ver Proyecto
+      <a href="${p.web}" target="_blank" class="overlay" data-i18n="viewProyect">
       </a>
     </div>
     <div class="card-content">
-      <h3>${p.title}</h3>
-      <p>${p.desc}</p>
-      <button onclick="window.open('${p.link}')">Ver código</button>
+      <h3 data-i18n="${p.title}"></h3>
+      <p data-i18n="${p.desc}"></p>
+      <button data-i18n="viewCode" onclick="window.open('${p.link}')"></button>
     </div>
   </div>
 `;
