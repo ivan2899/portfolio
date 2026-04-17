@@ -8,6 +8,13 @@ const projects = [
     web: "#"
   },
   {
+    title: "Clinica online",
+    desc: "Sistema que permite gestion de turnos",
+    img: "./media/proyects/clinicaProyect.png",
+    link: "https://github.com/ivan2899/clinicaOnline.git",
+    web: "https://clinicaonline-2a62f.web.app/login"
+  },
+  {
     title: "Security tech",
     desc: "Web informativa sobre seguridad informatica",
     img: "./media/proyects/securityProyect.png", link: "https://github.com/ivan2899/security-tech.git", web: "https://ivan2899.github.io/security-tech/"
@@ -25,13 +32,6 @@ const projects = [
     img: "./media/proyects/coffeeProyect.png",
     link: "https://github.com/ivan2899/A332-1-grupo2-coffee-house",
     web: "https://ivan2899.github.io/A332-1-grupo2-coffee-house/"
-  },
-  {
-    title: "Comanda",
-    desc: "App mobile completa.",
-    img: "https://picsum.photos/403/200",
-    link: "https://github.com/ivan2899/LosSaboresDelCodigo-2025.git",
-    web: "https://github.com/ivan2899/LosSaboresDelCodigo-2025.git"
   }
 ];
 
@@ -42,6 +42,7 @@ projects.forEach(p => {
   const div = document.createElement("div");
   div.className = "card";
   div.innerHTML = `
+  <div class="card-inner">
     <div class="img-wrapper">
       <img class="img-content" src="${p.img}">
       <a href="${p.web}" target="_blank" class="overlay">
@@ -52,7 +53,9 @@ projects.forEach(p => {
       <h3>${p.title}</h3>
       <p>${p.desc}</p>
       <button onclick="window.open('${p.link}')">Ver código</button>
-    </div>`;
+    </div>
+  </div>
+`;
   track.appendChild(div);
 });
 
@@ -118,7 +121,7 @@ document.addEventListener("mousemove", e => {
 });
 
 // TEXTO DINÁMICO
-let texts = ["Desarrollador Web", "Desarrollador Mobile", "Frontend", "Full Stack"]
+let texts = [];
 
 let i = 0, j = 0;
 const dyn = document.getElementById("dynamicText");
@@ -157,14 +160,30 @@ function applyTranslations() {
     const key = el.dataset.i18n;
     el.textContent = translations[key];
   });
+
+  if (translations.dynamicText) {
+    texts = translations.dynamicText;
+    i = 0;
+    j = 0;
+    dyn.textContent = "";
+    type();
+  }
 }
 
 /* TOGGLE */
 function toggleLang() {
   currentLang = currentLang === "es" ? "en" : "es";
 
-  document.getElementById("langBtn").textContent =
-    currentLang === "es" ? "EN" : "ES";
+  const text = document.getElementById("langText");
+  const img = document.getElementById("langImg");
+
+  if (currentLang === "es") {
+    text.textContent = "EN";
+    img.src = "./media/proyects/imgBanderaEEUU.png";
+  } else {
+    text.textContent = "ES";
+    img.src = "./media/proyects/imgBanderaEspania.png";
+  }
 
   loadTranslations(currentLang);
 }

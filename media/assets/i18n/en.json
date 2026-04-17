@@ -1,4 +1,10 @@
 {
+    "dynamicText": [
+        "Web Developer",
+        "Mobile Developer",
+        "Frontend Developer",
+        "Full Stack"
+    ],
     "home": "Home",
     "about": "About me",
     "projects": "Some of my projects",
