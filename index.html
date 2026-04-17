@@ -13,15 +13,13 @@
 </head>
 
 <body>
-
-    <!-- 
-    TODO: Pasar el texto de las imagenes a ingles
-    Arreglar las cards que quedó el boton muy junto
-    Menú hamburguesa
-    Arreglar flechas de carrousel    
-    -->
-
     <nav>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <div class="nav-links">
             <a href="#home" data-i18n="home">Inicio</a>
@@ -66,11 +64,17 @@
     <section id="projects">
         <div class="container">
             <h2 data-i18n="projects">Algunos de mis proyectos</h2>
-            <div class="arrow left" onclick="move(-1)">◀</div>
-            <div class="arrow right" onclick="move(1)">▶</div>
 
-            <div class="carousel">
-                <div class="carousel-track" id="track"></div>
+            <div class="carousel-wrapper">
+
+                <div class="arrow left" onclick="move(-1)">◀</div>
+
+                <div class="carousel">
+                    <div class="carousel-track" id="track"></div>
+                </div>
+
+                <div class="arrow right" onclick="move(1)">▶</div>
+
             </div>
         </div>
     </section>
@@ -158,8 +162,10 @@
             <h2 data-i18n="contact">Contacto</h2>
 
             <div class="contact-header">
-                
-                <h3 class="contact-mail"><a href="mailto:ivan.cordoba2002@gmail.com">ivan.cordoba2002@gmail.com</a></h3>
+                <div class="email-box" onclick="copyMail(this)">
+                    <span class="email-text">ivan.cordoba2002@gmail.com</span>
+                    <span class="tooltip">Copiado!</span>
+                </div>
             </div>
 
             <div class="contact-grid">
@@ -173,7 +179,7 @@
                     <span>LinkedIn</span>
                 </a>
 
-                <a href="./media/Ivan_Cordoba_Frontend_Developer.pdf" target="_blank" class="contact-item">
+                <a href="./media/Ivan_Cordoba_Developer.pdf" target="_blank" class="contact-item">
                     <i class="fas fa-file"></i>
                     <span>CV</span>
                 </a>

@@ -5,14 +5,14 @@ const projects = [
     desc: "project1.desc",
     img: "./media/proyects/gameProyect.jpeg",
     link: "https://github.com/ivan2899/tp.salaDeJuegos",
-    web: "#"
+    web: "https://tpsaladejuegos-7f33d.web.app"
   },
   {
     title: "project2.title",
     desc: "project2.desc",
     img: "./media/proyects/clinicaProyect.png",
     link: "https://github.com/ivan2899/clinicaOnline.git",
-    web: "https://clinicaonline-2a62f.web.app/login"
+    web: "https://clinicaonline-2a62f.web.app"
   },
   {
     title: "project3.title",
@@ -157,18 +157,38 @@ async function loadTranslations(lang) {
 
 /* APLICAR */
 function applyTranslations() {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    el.textContent = translations[key];
+  const elements = document.querySelectorAll("[data-i18n]");
+
+  // FADE OUT (con blur)
+  elements.forEach(el => {
+    el.classList.add("fade-out");
+    el.classList.remove("fade-in");
   });
 
-  if (translations.dynamicText) {
-    texts = translations.dynamicText;
-    i = 0;
-    j = 0;
-    dyn.textContent = "";
-    type();
-  }
+  setTimeout(() => {
+
+    // CAMBIO DE TEXTO
+    elements.forEach(el => {
+      const key = el.dataset.i18n;
+      el.textContent = translations[key] || "";
+    });
+
+    // FADE IN
+    elements.forEach(el => {
+      el.classList.remove("fade-out");
+      el.classList.add("fade-in");
+    });
+
+    // TEXTO DINÁMICO RESET
+    if (translations.dynamicText) {
+      texts = translations.dynamicText;
+      i = 0;
+      j = 0;
+      dyn.textContent = "";
+      type();
+    }
+
+  }, 250);
 }
 
 /* TOGGLE */
@@ -219,6 +239,41 @@ window.addEventListener("scroll", () => {
       a.classList.add("active");
     }
   });
+});
+
+function copyMail(el) {
+  const email = "ivan.cordoba2002@gmail.com";
+
+  navigator.clipboard.writeText(email);
+
+  el.classList.add("copied");
+
+  setTimeout(() => {
+    el.classList.remove("copied");
+  }, 1500);
+}
+
+function toggleMenu() {
+  const menu = document.querySelector(".nav-links");
+  const burger = document.querySelector(".hamburger");
+
+  menu.classList.toggle("open");
+  burger.classList.toggle("active");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const links = document.querySelectorAll(".nav-links a");
+  const menu = document.querySelector(".nav-links");
+  const burger = document.querySelector(".hamburger");
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("open");
+      burger.classList.remove("active");
+    });
+  });
+
 });
 
 loadTranslations(currentLang);

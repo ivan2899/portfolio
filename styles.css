@@ -223,16 +223,24 @@
         margin-bottom: 40px;
     }
 
-    /* CAROUSEL */
     .carousel {
         position: relative;
         overflow: hidden;
+    }
+
+    .carousel-wrapper {
+        position: relative;
     }
 
     .carousel-track {
         display: flex;
         gap: 20px;
         transition: transform 0.5s ease;
+    }
+
+    .container:hover .arrow {
+        opacity: 1;
+        pointer-events: all;
     }
 
     .card {
@@ -291,16 +299,24 @@
         filter: blur(2px);
     }
 
+    .img-wrapper {
+        position: relative;
+    }
+
     .overlay {
         position: absolute;
-        top: 20%;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -40%) scale(0.9);
+
         opacity: 0;
+        pointer-events: none;
+
         background: rgba(0, 0, 0, 0.6);
         padding: 10px 20px;
         border-radius: 10px;
-        transition: opacity 0.3s ease;
+
+        transition: all 0.3s ease;
         color: white;
         text-decoration: none;
         z-index: 5;
@@ -311,7 +327,27 @@
         box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
     }
 
-    .card:hover .overlay {
+    .card .img-wrapper .overlay {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .card:hover .img-wrapper .overlay {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: auto;
+    }
+
+    .img-wrapper::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .card:hover .img-wrapper::after {
         opacity: 1;
     }
 
@@ -361,6 +397,9 @@
         border-radius: 50%;
         z-index: 10;
         border: 1px solid rgba(62, 63, 128, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
     }
 
     .arrow:hover {
@@ -368,11 +407,11 @@
     }
 
     .arrow.left {
-        left: 19%;
+        left: -50px;
     }
 
     .arrow.right {
-        right: 19%;
+        right: -50px;
     }
 
     /* TIMELINE */
@@ -454,6 +493,63 @@
         cursor: pointer;
     }
 
+    .contact-mail a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .email-box {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .email-text {
+        color: var(--text);
+        font-weight: 500;
+        font-size: large;
+        transition: 0.3s;
+    }
+
+    /* Hover pro */
+    .email-box:hover .email-text {
+        color: var(--accent);
+        text-shadow: 0 0 8px var(--accent);
+    }
+
+    /* TOOLTIP */
+    .tooltip {
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+        background: var(--accent);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    /* cuando copia */
+    .email-box.copied .tooltip {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    .contact-mail a:hover {
+        color: var(--accent);
+        /* ✨ efecto moderno */
+        text-shadow: 5px 5px 8px var(--accent);
+    }
+
     .contact-item:hover {
         transform: translateY(-5px);
     }
@@ -467,4 +563,108 @@
         text-align: center;
         padding: 30px;
         color: var(--muted);
+    }
+
+    [data-i18n] {
+        display: inline-block;
+        transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* SALE */
+    .fade-out {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+        filter: blur(6px);
+    }
+
+    /* ENTRA */
+    .fade-in {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+
+
+    /* HAMBURGER */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* ANIMACIÓN A "X" */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+        .overlay {
+            opacity: 1;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            right: 0;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            background: var(--bg);
+
+            max-height: 0;
+            overflow: hidden;
+
+            transition: max-height 0.4s ease;
+        }
+
+        .nav-links.open {
+            max-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .nav-links a {
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
+
+    @media (hover: none) {
+
+        .arrow {
+            opacity: 1 !important;
+            pointer-events: all;
+        }
+
+        .arrow.left {
+            left: 0px;
+        }
+
+        .arrow.right {
+            right: 0px;
+        }
+
     }
