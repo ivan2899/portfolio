@@ -1,10 +1,7 @@
 {
   "dynamicText": [
     "Desarrollador Web",
-    "Desarrollador de sistemas",
-    "Desarrollador Mobile",
-    "Desarrollador Frontend",
-    "Full Stack"
+    "Desarrollador de sistemas"
   ],
   "home": "Inicio",
   "about": "Sobre mí",
@@ -33,5 +30,6 @@
   "project4.title": "Inclusión",
   "project4.desc": "Web para facilitar el acceso a las personas con discapacidad a la información",
   "project5.title": "Coffee House",
-  "project5.desc": "Desarrollo grupal simulando una web de venta de café"
+  "project5.desc": "Desarrollo grupal simulando una web de venta de café",
+  "certifications": "Certificaciones"
 }

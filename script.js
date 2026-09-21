@@ -123,25 +123,28 @@ document.addEventListener("mousemove", e => {
 
 // TEXTO DINÁMICO
 let texts = [];
-
 let i = 0, j = 0;
 const dyn = document.getElementById("dynamicText");
+let typingTimeout = null;
 
 function type() {
   if (j < texts[i].length) {
     dyn.textContent += texts[i][j++];
-    setTimeout(type, 50);
-  } else setTimeout(erase, 1500);
+    typingTimeout = setTimeout(type, 50);
+  } else {
+    typingTimeout = setTimeout(erase, 1500);
+  }
 }
 
 function erase() {
   if (j > 0) {
     dyn.textContent = texts[i].substring(0, --j);
-    setTimeout(erase, 30);
+    typingTimeout = setTimeout(erase, 30);
   } else {
     i = (i + 1) % texts.length;
-    setTimeout(type, 300);
+    typingTimeout = setTimeout(type, 300);
   }
+
 }
 
 /* ===== CAMBIO DE IDIOMA ===== */
@@ -181,10 +184,16 @@ function applyTranslations() {
 
     // TEXTO DINÁMICO RESET
     if (translations.dynamicText) {
+      // Cancelar el ciclo anterior
+      clearTimeout(typingTimeout);
+      // Cargar los nuevos textos
       texts = translations.dynamicText;
+      // Reiniciar índices
       i = 0;
       j = 0;
+      // Limpiar texto visible
       dyn.textContent = "";
+      // Iniciar nuevo ciclo
       type();
     }
 
@@ -227,7 +236,6 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  // 👇 FIX para HOME
   if (window.scrollY < 200) {
     current = "home";
   }
@@ -243,9 +251,7 @@ window.addEventListener("scroll", () => {
 
 function copyMail(el) {
   const email = "ivan.cordoba2002@gmail.com";
-
   navigator.clipboard.writeText(email);
-
   el.classList.add("copied");
 
   setTimeout(() => {
@@ -273,6 +279,77 @@ document.addEventListener("DOMContentLoaded", () => {
       burger.classList.remove("active");
     });
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const certificateModal =
+    document.getElementById("certificateModal");
+  const modalCertificate =
+    document.getElementById("modalCertificate");
+  const modalTitle =
+    document.getElementById("modalTitle");
+  const modalDescription =
+    document.getElementById("modalDescription");
+  const closeCertificate =
+    document.querySelector(".close-certificate");
+
+  /*    ABRIR CERTIFICADO    */
+
+  document.querySelectorAll(".certificate-item").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+      const image = item.querySelector("img");
+      const title =
+        item.querySelector(".certificate-info h3");
+      const description =
+        item.querySelector(".certificate-info p");
+
+      modalCertificate.src = image.src;
+      modalCertificate.alt = image.alt;
+      modalTitle.textContent = title.textContent;
+      modalDescription.textContent =
+        description.textContent;
+
+      certificateModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+
+  });
+
+
+  /*
+  CERRAR
+  */
+
+  closeCertificate.addEventListener("click", closeModal);
+
+  certificateModal.addEventListener("click", (event) => {
+
+    if (event.target === certificateModal) {
+      closeModal();
+    }
+
+  });
+
+  document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+      closeModal();
+
+    }
+
+  });
+
+  /*    FUNCIÓN CERRAR */
+  function closeModal() {
+
+    certificateModal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+  }
 
 });
 

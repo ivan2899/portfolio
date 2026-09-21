@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Ivan</title>
+    <title>Ivan Cordoba - Portfolio</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -157,6 +157,104 @@
         </div>
     </section>
 
+    <section id="certifications">
+        <div class="container">
+
+            <h2 data-i18n="certifications">Certificaciones</h2>
+
+            <div class="certifications-gallery">
+
+                <div class="certificate-item">
+                    <div class="certificate-frame">
+                        <img src="./media/certifications/Python.png" alt="Certificado Programación">
+                        <div class="certificate-preview">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                    </div>
+
+                    <div class="certificate-info">
+                        <h3>Python</h3>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-frame">
+                        <img src="./media/certifications/DW4.png" alt="Certificado Programación">
+                        <div class="certificate-preview">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Desarrollo Web IV</h3>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-frame">
+                        <img src="./media/certifications/DW3.png" alt="Certificado Frontend">
+                        <div class="certificate-preview">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Desarrollo Web III</h3>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-frame">
+                        <img src="./media/certifications/DW2.png" alt="Certificado Desarrollo Web">
+                        <div class="certificate-preview">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Desarrollo Web II</h3>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-frame">
+                        <img src="./media/certifications/DW1.png" alt="Certificado Desarrollo Web">
+                        <div class="certificate-preview">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Desarrollo Web</h3>
+                        <p>2022</p>
+                    </div>
+                </div>
+
+                <!--
+                <div class="certificate-item">
+                    <div class="certificate-frame">
+                        <img src="./media/certifications/DW1.png" alt="Otras certificiones">
+                        <div class="certificate-preview">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Otras certificaciones</h3>
+                        <p>Haz clic para ver más</p>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- VISUALIZADOR -->
+
+    <div class="certificate-modal" id="certificateModal">
+        <button class="close-certificate" aria-label="Cerrar">
+            &times;
+        </button>
+        <div class="modal-content">
+            <img id="modalCertificate" src="" alt="Certificado ampliado">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
     <section id="contact">
         <div class="container">
             <h2 data-i18n="contact">Contacto</h2>
@@ -169,9 +267,9 @@
             </div>
 
             <div class="contact-grid">
-                <a href="https://github.com/ivan2899" target="_blank" class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
+                <a href="https://wa.me/5491150226495" target="_blank" class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
                 </a>
 
                 <a href="https://linkedin.com/in/ivan-cordoba-90b499253" target="_blank" class="contact-item">
@@ -179,8 +277,13 @@
                     <span>LinkedIn</span>
                 </a>
 
+                <a href="https://github.com/ivan2899" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+
                 <a href="./media/Ivan_Cordoba_Developer.pdf" target="_blank" class="contact-item">
-                    <i class="fas fa-file"></i>
+                    <i class="fas fa-address-book"></i>
                     <span>CV</span>
                 </a>
             </div>

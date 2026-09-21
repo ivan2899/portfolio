@@ -1,10 +1,7 @@
 {
     "dynamicText": [
         "Web Developer",
-        "Sistem Developer",
-        "Mobile Developer",
-        "Frontend Developer",
-        "Full Stack"
+        "System Developer"
     ],
     "home": "Home",
     "about": "About me",
@@ -33,5 +30,6 @@
     "project4.title": "Inclusion",
     "project4.desc": "Website to facilitate access to information for people with disabilities",
     "project5.title": "Coffee House",
-    "project5.desc": "Group project simulating a coffee e-commerce website"
+    "project5.desc": "Group project simulating a coffee e-commerce website",
+    "certifications": "Certifications"
 }
